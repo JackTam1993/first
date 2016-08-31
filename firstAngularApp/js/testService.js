@@ -1,0 +1,4 @@
+app.factory('testFactory',function(){
+	var information = [{"orderedNumber":"1","name":"a","sex":"male","age":"23","idNum":"1234567890XX","contactNum":"13911111111","address":"dfs","project":"aa","source":"aa","contractTime":"2014"},{"orderedNumber":"1","name":"a","sex":"male","age":"23","idNum":"1234567890XX","contactNum":"13911111111","address":"dfs","project":"aa","source":"aa","contractTime":"2014"},{"orderedNumber":"1","name":"a","sex":"male","age":"23","idNum":"1234567890XX","contactNum":"13911111111","address":"dfs","project":"aa","source":"aa","contractTime":"2014"}]
+    return {information:information};
+})

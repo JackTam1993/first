@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AngularApp</title>
+	<meta charset="utf-8">
+	<script type="text/javascript"></script>
+	<script src="js/jquery-3.1.0.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="js/module.js"></script>
+	<script src="js/mainController.js"></script>
+	<script src="js/testService.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+	<style>
+#rightMenu li{
+   list-style-type: none;
+}
+#dropdownButton{
+	text-align: center;
+}
+th,td{
+	text-align: center;
+}		
+	</style>
+</head>
+<body ng-app="myApp">
+<!-- 导航栏 -->
+   <nav class="navbar navbar-default" role="navigation">
+   <div class="container-fluid">
+     <div class="nav navbar-header">
+   	   <a class="navbar-brand" href="#"><strong>家庭医生服务平台</strong></a>
+     </div>
+   	 <div>
+   	 	<ul class="nav navbar-nav navbar-right">
+   	 		<li><a href="#" class="glyphicon glyphicon-user">&nbsp我的团队</a></li>
+   	 		<li><a href="#" class="glyphicon glyphicon-briefcase">&nbsp我的工作</a></li>
+   	 		<li><a href="#" class="glyphicon glyphicon-tasks">&nbsp知识库</a></li>
+   	 	</ul>
+   	 </div>
+   </div>
+   </nav>
+   <div class="container-fluid">
+   <!-- 正文左侧菜单栏 -->
+       <div class="row">
+   	        <div class="col-lg-2">
+   	   	       <div class="panel-group" id="accordion">
+   	   	       	    <div class="panel panel-default">
+   	   	       	    	<div class="panel-heading">
+   	   	       	    		<h4 class="panel-title">
+   	   	       	    			<a href="#collapseOne" data-toggle="collapse" data-parent="#accordion">公共卫生服务</a>
+   	   	       	    		</h4>
+   	   	       	    	</div>
+   	   	       	    	<div id="collapseOne" class="panel-collapse collapse in">
+   	   	       	    	<div class="panel-body">健康档案</div>
+   	   	       	    	</div>
+   	   	       	    </div>
+   	   	       	    <div class="panel panel-default">
+   	   	       	    	<div class="panel-heading">
+   	   	       	    		<h4 class="panel-title">
+   	   	       	    			<a href="#collapseTwo" data-toggle="collapse" data-parent="#accordion">基本医疗服务</a>
+   	   	       	    		</h4>
+   	   	       	    	</div>
+   	   	       	    	<div id="collapseTwo" class="panel-collapse collapse">
+   	   	       	    	<div class="panel-body">家庭医生签约集群</div>
+   	   	       	    	</div>
+   	   	       	    </div>
+   	   	       	    <div class="panel panel-default">
+   	   	       	    	<div class="panel-heading">
+   	   	       	    		<h4 class="panel-title">
+   	   	       	    			<a href="#collapseThree" data-toggle="collapse" data-parent="#accordion">慢病健康服务预案</a>
+   	   	       	    		</h4>
+   	   	       	    	</div>
+   	   	       	    	<div id="collapseThree" class="panel-collapse collapse">
+   	   	       	    	<div class="panel-body">服务预案匹配</div>
+   	   	       	    	<div class="panel-body">服务预案集群</div>
+   	   	       	    	</div>
+   	   	       	    </div>
+   	   	       </div>
+   	   	       <!-- <ul class="list-group">
+                    <li class="list-group-item"><strong>公共卫生服务</strong></li>
+                    <li class="list-group-item">健康档案</li>
+                    <li class="list-group-item"><strong>基本医疗服务</strong></li>
+                    <li class="list-group-item">家庭医生签约集群</li>
+                    <li class="list-group-item"><strong>慢病健康服务预案</strong></li>
+                    <li class="list-group-item">服务预案匹配</li>
+                    <li class="list-group-item">服务预案集群</li>
+                </ul> -->
+   	        </div>
+    <!-- 正文左侧菜单栏 -->
+            <div class="col-lg-10" id="rightMenu">
+    	        <ul>
+    	       	    <li>
+    	       	  	    <ol class="breadcrumb">
+    	       	  		    <li><a href="#" class="glyphicon glyphicon-map-marker">公共卫生服务</a></li>
+    	       	  		    <li><a href="#"></a>健康档案</li>
+    	       	  	    </ol>
+    	       	    </li>
+    	        </ul>
+    	        <div class="row">
+    	        <div class="dropdown col-md-2" id="dropdownButton">
+    	       	    <button type="button" class="btn btn-primary dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown">===请选择人群===
+                    <span class="caret"></span>
+    	       	    </button>
+    	       	    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    	       	    	<li role="presentation">
+    	       	    		<a role="menuitem" tabindex="-1" href="#">一般人群</a>
+    	       	    	</li>
+                        <li role="presentation">
+                        	<a role="menuitem" tabindex="-1" href="#">高血压</a>
+                        </li>
+                        <li role="presentation">
+                        	<a role="menuitem" tabindex="-1" href="#">糖尿病</a>
+                        </li>
+                        <li role="presentation">
+                        	<a role="menuitem" tabindex="-1" href="#">孕产妇</a>
+                        </li>
+                        <li role="presentation">
+                        	<a role="menuitem" tabindex="-1" href="#">新生儿</a>
+                        </li>
+                        <li role="presentation">
+                        	<a role="menuitem" tabindex="-1" href="#">1岁以内儿童</a>
+                        </li>
+                        <li role="presentation">
+                        	<a role="menuitem" tabindex="-1" href="#">1-2岁儿童</a>
+                        </li>
+                        <li role="presentation">
+                        	<a role="menuitem" tabindex="-1" href="#">3-6岁儿童</a>
+                        </li>
+                        <li role="presentation">
+                        	<a role="menuitem" tabindex="-1" href="#">老年人</a>
+                        </li>
+    	       	    </ul>
+    	        </div>
+    	        <div class="col-md-2">
+    	        	<input type="text" name="" class="form-control">
+    	        </div>
+    	        <div class="col-md-2">
+    	        	<button type="button" class="btn btn-warning">查询</button>
+    	        </div>
+    	        <div class="col-md-6 text-right">
+    	        	<button type="button" class="btn btn-warning glyphicon glyphicon-plus-sign">添加签约居民</button>
+    	        	<button type="button" class="btn btn-warning glyphicon glyphicon-save">批量导入</button>
+    	        </div>
+    	        </div>
+    	        <table class="col-md-12 table table-hover" ng-controller="testController">
+    	        	<thead>
+    	        		<th>序号</th>
+    	        		<th>姓名</th>
+    	        		<th>性别</th>
+    	        		<th>年龄</th>
+    	        		<th>证件号码</th>
+    	        		<th>联系电话</th>
+    	        		<th>地址</th>
+    	        		<th>公卫服务项目</th>
+    	        		<th>签约数据来源</th>
+    	        		<th>签约时间</th>
+    	        		<th>增删</th>
+    	        	</thead>
+    	        	<tbody ng-repeat="x in information">
+    	        		<td>{{x.orderedNumber}}</td>
+    	        		<td>{{x.name}}</td>
+    	        		<td>{{x.sex}}</td>
+    	        		<td>{{x.age}}</td>
+    	        		<td>{{x.idNum}}</td>
+    	        		<td>{{x.contactNum}}</td>
+    	        		<td>{{x.address}}</td>
+    	        		<td>{{x.project}}</td>
+    	        		<td>{{x.source}}</td>
+    	        		<td>{{x.contractTime}}</td>
+    	        		<td><button type="button" class="btn btn-warning" ng-click="delRow($index)">删除</button></td>
+    	        	</tbody>
+    	        </table>
+            </div>
+       </div>
+   </div>
+</body>
+</html>
